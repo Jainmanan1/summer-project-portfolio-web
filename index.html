@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manan's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="ul1">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about" id="aboutLink">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <img id="img1" src="background img.png" alt="Profile Picture">
+    </header>
+
+    <section class="hero" id="sec1">
+        <h1 class="image">Hi, I'm Manan, a web developer</h1>
+        <p class="image welcome-text">Welcome to my portfolio website</p>
+        <a href="portfolio.html" class="cta-button">PROJECTS</a>
+    </section>
+
+    <section class="about-section" id="about">
+        <h2>About Me</h2>
+        <div class="intro">
+            <p>Hi, I'm Manan, a passionate web developer with a knack for creating dynamic and responsive websites.</p>
+        </div>
+        <img src="color.jpg" alt="Manan">
+        <div class="bio-skill">
+            <div class="biography">
+                <h3>Biography</h3>
+                <p>I have a background in computer science and have been working in the web development field for over 1 year. I specialize in front-end development and also do back-end development, particularly in creating interactive and visually appealing web applications.</p>
+            </div>
+            <div class="skills">
+                <h3>Skills</h3>
+                <ul>
+                    <li class="skill">HTML</li>
+                    <li class="skill">CSS</li>
+                    <li class="skill">JavaScript</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero1">
+        <div class="row">
+            <div class="col-md-7">
+                <h3 class="work">Some of my work</h3>
+                <div class="col-md-5">
+                    <ul class="img1">
+                        <li>
+                            <a href="http://127.0.0.1:5501/index.html">
+                                <img class="prj1" src="color.jpg" height="175px" width="175px">
+                            </a>
+                        </li>
+                        <li>
+                            <img class="prj1" src="background img.png" height="175px" width="175px">
+                        </li>
+                        <li>
+                            <img class="prj1" src="background img.png" height="175px" width="175px">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="formPopup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>Contact Me</h2>
+            <form id="contactForm" autocomplete="on">
+                <label for="name">Name:</label>
+                <input type="text" name="name" autocomplete="name" id="name" required>
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" name="mobile" autocomplete="mobile" pattern="[0-9]{10}" id="mobile" required>
+                <label for="email">Email:</label>
+                <input type="email" name="email" autocomplete="email" id="email" required>
+                <label for="organization">Organization Name:</label>
+                <input type="text" id="organization" autocomplete="organization" name="organization">
+                <button type="submit">Submit</button>
+            </form>
+            <p id="successMessage" class="hidden" style="color: green;">Thank you for contacting me!</p>
+        </div>
+    </div>
+
+    <div class="conct_Me" id="contact">
+        <button id="openFormButton" class="cta-button">Contact Me</button>
+    </div>
+
+    <footer>
+        <div id="row">
+            <nav id="nav-footer">
+                <ul class="footer-ul">
+                    <li>
+                        <p>&copy; 2024 Manan. All rights reserved.</p>
+                    </li>
+                    <li class="social-icons">
+                        <a class="linkdn" href="https://www.linkedin.com/in/manan-jain-bb395128b/" title="Follow me on LinkedIn" target="_blank"></a>
+                        <a class="instagram" href="https://www.instagram.com/manan_3926/" title="Follow me on Instagram" target="_blank"></a>
+                        <a class="twitter" href="https://x.com/manan20050?t=A4sEkpljIexKBMwFenYHvQ&s=08" title="Follow me on Twitter" target="_blank"></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
