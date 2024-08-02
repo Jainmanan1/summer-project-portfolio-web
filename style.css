@@ -1,22 +1,232 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: rgba(0, 0, 0, 0.959);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    z-index: 100;
+}
+.blur {
+    filter: blur(5px);
+    transition: filter 0.3s;
+}
+.bx{
+    transform: translate(-23px);
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(136, 40, 40, 0.4),
+      transparent
+    );
+    transition: 0.5s;
+}
+
+.header:hover::before {
+    left: 100%;
+}
+
+nav a span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-bottom: 2px solid #0ef;
+    border-radius: 15px;
+    transform: scale(0) translateY(50px);
+    opacity: 0;
+    transition: .5s;
+}
+nav a:hover span {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+nav a{
+    transition: .5s;
+    color: white;
+    position: relative;
+}
+nav a:hover {
+    color: #0ef;
+}
+
+
+.navbar {
+    display: flex;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin-left: 35px;
+}
+
+.navbar ul li a {
+   
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+
+
+#menu-icon {
+    font-size: 36px;
+    color: #ffffff;
+    display: none;
+}
+
+
+@media (max-width: 992px) {
+    .header {
+      padding: 1.25rem 4%;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-icon {
+      display: block;
+    }
+    .navbar {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: 0.5rem 4%;
+      flex-direction: column;
+      display: none;
+      z-index: 101;
+      margin-top: 10px;
+    }
+    .navbar.active {
+      display: flex;
+    }
+    .navbar ul {
+      flex-direction: column;
+      width: 100%;
+    }
+    .navbar ul li {
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+    .nav-bg {
+      position: absolute;
+      top: 79px;
+      left: 0;
+      width: 100%;
+      height: 295px;
+      background: rgba(14, 13, 13, 0.1);
+      border-bottom: 2px solid rgba(26, 25, 25, 0.2);
+      backdrop-filter: blur(10px);
+      z-index: 99;
+      display: none;
+    }
+    .nav-bg.active {
+      display: block;
+    }
+}
 
 .about-section {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-    animation: fadeIn 1.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+    padding: 50px;
+    background-color: #f4f4f4;
+    margin: 20px;
+    border-radius: 10px;
+    text-align: center;
 }
 
-.about-section.transition-active {
+.animation-transition {
+    opacity: 1;
+}
+
+
+
+/* .about-section {
+    opacity: 0;
+     transform: translateY(0);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; 
+} */
+
+/* .about-section.transition-active {
     opacity: 1;
     transform: translateY(0);
+} */
+
+/* .about-section.transition {
+    opacity: 0;
+    transform: translateY(20px);
+} */
+
+.hero1 {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
+
+.hero1.transation {
+    opacity: 0;
+    transform: translateY(20px);
+}
+.hero1.transation-active{
+    opacity:1;
+    transform: translateY(0);
+}
+.img1 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.img1 li {
+    list-style: none;
+}
+
+.img1 img {
+    transition: box-shadow 0.5s ease, transform 0.5s ease;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+.img1 img:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: scale(100.5%);
+}
+
+.animation-transition {
+    opacity: 1;
+    transform: none;
+}
+
 
 #about .intro,
 #about img,
 #about .biography,
 #about .skills {
-    opacity: 1;
-    transform: translateY(20px);
+    
+    
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
@@ -29,7 +239,6 @@
 }
 
 
-
 html {
     scroll-behavior:smooth;
 }
@@ -39,23 +248,12 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column;
+ flex-direction: column; 
     min-height: 100vh;
+    
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row-reverse;
-}
+
 
 section h1{
     font-size: 60px;
@@ -67,25 +265,11 @@ section p{
     transform: translate(0px,-70px);
 }
 
-header li {
+/* header li {
     font-size: 10px;
-}
+} */
 
-nav .ul1 {
-    list-style: none;
-    padding: 10px;
-    margin: 0;
-    display: flex;
-}
 
-nav .ul1 li {
-    margin: 0 20px;
-}
-
-nav .ul1 li a {
-    color: #fff;
-    text-decoration: none;
-}
 
 #img1 {
     width: 30px;
@@ -98,9 +282,9 @@ nav .ul1 li a {
         width: 50px;
         height: 50px;
     }
-    header li {
+    /* header li {
         font-size: medium;
-    }
+    } */
 }
 
 .hero {
@@ -116,6 +300,9 @@ nav .ul1 li a {
     position: relative;
     background-color: #ffffff;
     flex-grow: 1;
+}
+.work{
+    font-size: 60px;
 }
 
 .hero-text {
@@ -205,15 +392,19 @@ footer {
 .popup {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 10%;
+    left: 40%;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+  
     justify-content: center;
     align-items: center;
     z-index: 102; 
+  
+    width: 80%; 
+    max-width: 400px;
 }
+
 
 .popup-content {
     background-color: white;
@@ -297,7 +488,43 @@ ul {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+    background-position: 0 0;
+    animation: backText 10s linear  alternate;
 }
+@keyframes backText {
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    @keyframes backText {
+        100% {
+            background-position: 900px 0;
+        }
+    }
+
+    
+}
+@media only screen and (min-width: 425px) {
+    @keyframes backText {
+        100% {
+            background-position: 1150px 0;
+        }
+    }
+
+    
+}
+@media only screen and (min-width: 320px) {
+    @keyframes backText {
+        100% {
+            background-position: 890px 0;
+        }
+    }
+
+    
+}
+
 
 .col-md-5{
     display: flex;
@@ -457,22 +684,14 @@ section p, h1 {
     color: black;
 }
 
-header{
-    transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
-    
-}
 
-header.scrolled{
-    background-color: #222;
-    padding: 10px 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
 
 .skill {
     display: inline-block;
     font-size: 1em;
     margin: 0 10px;
     transition: transform 1s ease;
+    cursor: pointer;
 }
 
 .skill:hover {
@@ -487,37 +706,91 @@ header.scrolled{
 
 
 #sec1 h1:hover {
-    transform: translateY(-100px) scale(1.01);
-    transition: transform 0.3s ease;
+    transform: translateY(-100px) scale(1.05);
+    transition: transform 0.2s ease-in-out;
 }
 
 #sec1 p:hover{
 
-    transform:translateY(-70px) scale(1.01);
-    transition: transform 0.3s ease;
+    transform:translateY(-70px) scale(1.05);
+    transition: transform 0.2s ease;
 }
-
 .bio-skill {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     gap: 20px;
 }
 
-.biography, .skills {
-    flex: 1 1 100%; 
-    max-width: 100%; 
-    margin: 10px; 
+.biography,
+.skills {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin: 10px;
 }
 
-@media only screen and (min-width: 768px) {
+ @media only screen and (min-width: 768px) {
     .bio-skill {
-        flex-wrap: nowrap; 
-        gap: 200px; 
+        flex-wrap: nowrap;
+        gap: 200px;
     }
 
-    .biography, .skills {
+    .biography,
+    .skills {
         max-width: 45%;
     }
+} 
+
+
+@media (max-width: 768px) {
+  
+
+    .popup-content {
+        padding: 15px;
+        width: 80%;
+        max-width: 100%;
+        justify-content: center;
+        justify-items: center;
+        left: -30%;
+        
+    }
+
+    .popup-content label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .popup-content input {
+        width: calc(100% - 20px);
+        padding: 5px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+    .popup-content button {
+        width: 50%;
+        padding: 10px;
+    }
+
+
+    .navbar ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-align: center;
+    }
+
+    .navbar ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .footer-ul li {
+        display: block;
+        margin: 10px 0;
+    }
 }
+
+
+
 
