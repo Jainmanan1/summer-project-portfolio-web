@@ -6,71 +6,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manan's Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <ul class="ul1">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#about" id="aboutLink">About</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
+    
+    <header class="header">
+        <a href="index.html"> <img id="img1" src="background img.png" alt="Profile Picture"></a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <ul>
+                <li><a id="home" href="index.html">Home<span></span></a></li>
+                <li><a href="#about" id="aboutLink">About<span></span></a></li>
+                <li><a href="#work_Project">Portfolio<span></span></a></li>
+                <li><a href="#contact">Contact<span></span></a></li>
+               
             </ul>
+           
+            
         </nav>
-        <img id="img1" src="background img.png" alt="Profile Picture">
+       
+       
+       
+        <div class="nav-bg"></div>
+
+        
     </header>
+   
 
-    <section class="hero" id="sec1">
-        <h1 class="image">Hi, I'm Manan, a web developer</h1>
-        <p class="image welcome-text">Welcome to my portfolio website</p>
-        <a href="portfolio.html" class="cta-button">PROJECTS</a>
-    </section>
+    <div id="main-content">
+        <section class="hero" id="sec1">
+            <h1 class="image">Hi, I'm Manan</h1>
+            <p class="image welcome-text">Welcome to my portfolio website</p>
+            <a href="#work_Project" class="cta-button">PROJECTS</a>
+        </section>
 
-    <section class="about-section" id="about">
-        <h2>About Me</h2>
-        <div class="intro">
-            <p>Hi, I'm Manan, a passionate web developer with a knack for creating dynamic and responsive websites.</p>
-        </div>
-        <img src="color.jpg" alt="Manan">
-        <div class="bio-skill">
-            <div class="biography">
-                <h3>Biography</h3>
-                <p>I have a background in computer science and have been working in the web development field for over 1 year. I specialize in front-end development and also do back-end development, particularly in creating interactive and visually appealing web applications.</p>
+        <section class="about-section" id="about">
+            <h2>About Me</h2>
+            <div class="intro">
+                <p>Hi, I'm Manan, a passionate web developer with a knack for creating dynamic and responsive websites. Feel free to Connect or Follow me on my <a href="https://www.linkedin.com/in/manan-jain-bb395128b/">Linkedin.</a>I'm open to Job opportunities where I can contribute, learn and grow. If you have a good opportunity that matches my skills and experience then don't hesitate to contact me.
+
+                    CONTACT</p>
             </div>
-            <div class="skills">
-                <h3>Skills</h3>
-                <ul>
-                    <li class="skill">HTML</li>
-                    <li class="skill">CSS</li>
-                    <li class="skill">JavaScript</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="hero1">
-        <div class="row">
-            <div class="col-md-7">
-                <h3 class="work">Some of my work</h3>
-                <div class="col-md-5">
-                    <ul class="img1">
-                        <li>
-                            <a href="http://127.0.0.1:5501/index.html">
-                                <img class="prj1" src="color.jpg" height="175px" width="175px">
-                            </a>
-                        </li>
-                        <li>
-                            <img class="prj1" src="background img.png" height="175px" width="175px">
-                        </li>
-                        <li>
-                            <img class="prj1" src="background img.png" height="175px" width="175px">
-                        </li>
+            
+            <div class="bio-skill">
+                <div class="biography">
+                    <h3>Biography</h3>
+                    <p>I have a background in computer science and have been working in the web development field for over 1 year. I specialize in front-end development and also do back-end development, particularly in creating interactive and visually appealing web applications.</p>
+                </div>
+                <div class="skills">
+                    <h3>Skills</h3>
+                    <ul>
+                        <li class="skill" id="html1">HTML</li>
+                        <li class="skill" id="css1">CSS</li>
+                        <li class="skill" id="js1">JavaScript</li>
+                        <li class="skill" id="sql1">MY SQL</li>
+                        
                     </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section class="hero1" id="work1">
+            <div class="row">
+                <div class="col-md-7">
+                    <h3 id="work_Project" class="work"> My work</h3>
+                    <div class="col-md-5">
+                        <ul class="img1">
+                            <li>
+                                <a href="https://jainmanan1.github.io/CODSOFT/calculator/">
+                                    <img class="prj1" src="https://help.apple.com/assets/65E21662495F1A6C8701F50A/65E21663EF8273BE1D0C2734/en_US/e726abd62a7d08749d3a882889cdc78d.png" height="175px" width="175px">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://jainmanan1.github.io/CODSOFT/landing%20page/">
+                                <img class="prj1" src="land.png" height="175px" width="175px">
+                            </a>
+                            </li>
+                          
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <div id="formPopup" class="popup">
         <div class="popup-content">
@@ -92,7 +111,7 @@
     </div>
 
     <div class="conct_Me" id="contact">
-        <button id="openFormButton" class="cta-button">Contact Me</button>
+        <button id="openFormButton" class="cta-button" title="contact me">Contact Me</button>
     </div>
 
     <footer>
